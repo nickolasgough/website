@@ -1,0 +1,57 @@
+@import "./globals.scss";
+
+.homeBox {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.nickPhoto {
+  height: 50%;
+  max-height: 70vh;
+  width: auto;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.introBox {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.linksBox {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.link {
+  display: flex;
+  margin: 4px auto;
+  align-items: center;
+}
+
+.linkText {
+  margin-left: 4px;
+}
+
+@media screen and (max-width: $mediumBP) {
+  .introBox {
+    width: 90%;
+  }
+
+  .linksBox {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: $smallBP) {
+  .nickPhoto {
+    width: 50%;
+    height: auto;
+  }
+
+  .linksBox {
+    flex-flow: column;
+  }
+}

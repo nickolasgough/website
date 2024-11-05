@@ -1,0 +1,17 @@
+@import "./globals.scss";
+
+.navList {
+  width: 250px;
+}
+
+.main {
+  display: flex;
+  margin-top: 56px;
+  padding: 8px;
+}
+
+@media screen and (min-width: $smallBP) {
+  .main {
+    margin-top: 64px;
+  }
+}
