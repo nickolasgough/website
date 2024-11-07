@@ -1,17 +1,39 @@
 @import "./globals.scss";
 
+.appBar {
+  display: none;
+}
+
 .navList {
-  width: 250px;
+  width: $navBarWidth;
 }
 
 .main {
   display: flex;
-  margin-top: 56px;
-  padding: 8px;
+  position: relative;
+  top: 0;
+  left: $navBarWidth;
+  height: 100%;
+  max-height: calc(100vh - (2*$appPadding));
+  width: 100%;
+  max-width: calc(100vw - $navBarWidth - (2*$appPadding));
+  padding: $appPadding;
 }
 
-@media screen and (min-width: $smallBP) {
+@media screen and (max-width: $smallBP) {
+  .appBar {
+    display: block;
+  }
+
   .main {
-    margin-top: 64px;
+    display: flex;
+    position: relative;
+    top: $appBarHeight;
+    left: 0;
+    height: 100%;
+    max-height: calc(100vh - $appBarHeight - (2*$appPadding));
+    width: 100%;
+    max-width: calc(100vw - (2*$appPadding));
+    padding: $appPadding;
   }
 }

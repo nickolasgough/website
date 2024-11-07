@@ -6,16 +6,27 @@
   width: 100%;
 }
 
-.nickPhoto {
-  height: 50%;
-  max-height: 70vh;
-  width: auto;
-  max-width: 80vw;
-  margin: 0 auto;
+.gridBox {
+  height: inherit;
+
+  .gridCol {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: center;
+  }
 }
 
 .introBox {
-  width: 50%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nickPhoto {
+  height: auto;
+  max-height: 70vh;
+  width: 100%;
+  max-width: 80vw;
   margin: 0 auto;
 }
 
@@ -35,23 +46,8 @@
   margin-left: 4px;
 }
 
-@media screen and (max-width: $mediumBP) {
-  .introBox {
-    width: 90%;
-  }
-
-  .linksBox {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: $smallBP) {
-  .nickPhoto {
-    width: 50%;
-    height: auto;
-  }
-
-  .linksBox {
-    flex-flow: column;
+@media screen and (min-width: $mediumBP) {
+  .homeBox {
+    height: 100%;
   }
 }

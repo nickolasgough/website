@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`} style={{height: "100vh", width: "100vw", margin: 0}}>
         <AppNav children={children}></AppNav>
       </body>
     </html>
