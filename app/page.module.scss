@@ -1,9 +1,8 @@
-@import "./globals.scss";
-
 .homeBox {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   width: 100%;
+  margin: auto;
 }
 
 .gridBox {
@@ -44,10 +43,4 @@
 
 .linkText {
   margin-left: 4px;
-}
-
-@media screen and (min-width: $mediumBP) {
-  .homeBox {
-    height: 100%;
-  }
 }

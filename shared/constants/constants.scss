@@ -2,10 +2,7 @@ $smallBP: 600px;
 $mediumBP: 900px;
 $largeBP: 1200px;
 
-$appBarHeight: 64px;
+$desktopAppBarHeight: 64px;
+$mobileAppBarHeight: 56px;
 $navBarWidth: 200px;
 $appPadding: 24px;
-
-@media screen and (max-width: $smallBP) {
-  $appBarHeight: 56px;
-}

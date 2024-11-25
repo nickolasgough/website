@@ -1,0 +1,47 @@
+.pageStack {
+  height: fit-content;
+}
+
+.sectionPaper {
+  height: fit-content;
+  padding: 16px;
+
+  &:not(:last-child) {
+    margin: 0 auto 16px;
+  }
+}
+
+.sectionBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.titleName {
+  font-weight: bold;
+}
+
+.subsectionTitle {
+  font-size: medium;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.subsectionText {
+  padding: 0 24px;
+
+  ul {
+    margin: 0;
+    padding-inline-start: 12px;
+  }
+}
+
+.companyLogo {
+  height: 36px;
+  width: auto;
+}

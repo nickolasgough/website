@@ -4,8 +4,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.scss";
-import AppNav from './nav';
+import AppNav from '../shared/nav/nav';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,6 +21,12 @@ export const metadata: Metadata = {
   title: "Nickolas Gough",
   description: "My personal website",
 };
+
+export const defaultBodyStyle = {
+  height: "100%",
+  width: "100%",
+  margin: 0,
+}
 
 export default function RootLayout({
   children,

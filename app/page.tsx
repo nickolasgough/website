@@ -1,18 +1,9 @@
 import Avatar from "@mui/material/Avatar";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid2";
-import Link from "@mui/material/Link";
-import { navItems } from "./constants";
 import styles from "./page.module.scss";
 
 export default function AppHome() {
-  const navLinks = navItems.map((ni) => {
-    return (
-      <Link key={ni.id} className={styles.link} href={ni.path}>
-        {ni.icon} <span className={styles.linkText}>{ni.text}</span>
-      </Link>
-    );
-  });
   return (
     <>
       <Container className={styles.homeBox}>
