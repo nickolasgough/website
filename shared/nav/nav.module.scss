@@ -1,9 +1,5 @@
 @use "../constants/constants.scss" as constants;
 
-.appBar {
-  display: none;
-}
-
 .navList {
   width: constants.$navBarWidth;
 }
@@ -11,30 +7,12 @@
 .main {
   display: flex;
   position: relative;
-  top: 0;
-  left: constants.$navBarWidth;
+  top: constants.$appBarHeight;
   height: 100%;
-  min-height: calc(100% - (2*constants.$appPadding));
+  max-height: calc(100% - constants.$appBarHeight - (2*constants.$appPadding));
   width: 100%;
-  max-width: calc(100% - constants.$navBarWidth - (2*constants.$appPadding));
+  max-width: calc(100% - (2*constants.$appPadding));
+  overflow-y: auto;
   padding: constants.$appPadding;
   background-color: whitesmoke;
-}
-
-@media screen and (max-width: constants.$smallBP) {
-  .appBar {
-    display: block;
-  }
-
-  .main {
-    display: flex;
-    position: relative;
-    top: constants.$mobileAppBarHeight;
-    left: 0;
-    height: 100%;
-    min-height: calc(100vh - constants.$mobileAppBarHeight - (2*constants.$appPadding));
-    width: 100%;
-    max-width: calc(100vw - (2*constants.$appPadding));
-    padding: constants.$appPadding;
-  }
 }

@@ -11,7 +11,7 @@ export default function CardSections({experience}: {experience: Institute[]}) {
     );
   });
   return (
-    <Stack className={styles.pageStack}>
+    <Stack className={styles.pageStack} spacing={1}>
       {sections}
     </Stack>
   );

@@ -8,11 +8,9 @@ import styles from "./page.module.scss";
 
 export default function ResumePage() {
   return (
-    <Stack className={styles.resumeStack}>
+    <Stack className={styles.resumeStack} spacing={3}>
       <ResumeSection title="Experience" history={experience}></ResumeSection>
-      <Box className={styles.resumeSection}>
-        <ResumeSection title="Education" history={education}></ResumeSection>
-      </Box>
+      <ResumeSection title="Education" history={education}></ResumeSection>
     </Stack>
   );
 }
@@ -24,9 +22,9 @@ interface ResumeSectionInput {
 
 function ResumeSection({title, history}: ResumeSectionInput) {
   return (
-    <Box>
+    <Stack spacing={2}>
       <Box className={styles.titleBox}>{title}</Box>
       <CardSections experience={history}></CardSections>
-    </Box>
+    </Stack>
   );
 }

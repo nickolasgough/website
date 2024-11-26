@@ -3,23 +3,13 @@
 import CodeIcon from '@mui/icons-material/Code';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import HomeIcon from '@mui/icons-material/Home';
-import MenuIcon from '@mui/icons-material/Menu';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import AppBar from "@mui/material/AppBar";
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import IconButton from "@mui/material/IconButton";
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Toolbar from "@mui/material/Toolbar";
-import { usePathname, useRouter } from 'next/navigation';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import { usePathname } from 'next/navigation';
 import React from 'react';
-import { smallBP } from "../constants/constants";
-import useWindowDimensions from '../hooks/useWindowDimensions';
-import { Router } from '../interfaces';
 import styles from "./nav.module.scss";
 
 export interface NavItem {
@@ -37,42 +27,22 @@ export const navItems: NavItem[] = [
 ];
 
 export default function AppNav({children}: {children: React.ReactNode}) {
-  const router = useRouter();
   const path = usePathname();
-  const [open, setOpen] = React.useState(false);
-  const navList = buildNavList(router, path);
-  const [{width}] = useWindowDimensions();
-  const desktopView = width > smallBP;
+  const initTabValue = navItems.findIndex((ni) => ni.path === path);
+  const [tabValue, setTabValue] = React.useState(initTabValue);
+  const onTabChange = (e: React.SyntheticEvent, v: number) => setTabValue(v);
   return (
     <>
-      <AppBar className={styles.appBar} position="fixed">
-        <Toolbar>
-          <IconButton color="inherit" onClick={() => setOpen(true)}>
-            <MenuIcon></MenuIcon>
-          </IconButton>
-        </Toolbar>
+      <AppBar className={styles.appBar} color="inherit" position="fixed">
+        <Tabs value={tabValue} role="navigation" textColor="primary" indicatorColor="primary" onChange={onTabChange} centered>
+          {navItems.map((ni) => {
+            return (
+              <Tab key={ni.id} component="a" label={ni.text} href={ni.path} icon={ni.icon} iconPosition="start"></Tab>
+            );
+          })}
+        </Tabs>
       </AppBar>
-      <Drawer open={open} variant={desktopView ? "permanent" : "temporary"} onClose={() => setOpen(false)}>
-        {navList}
-      </Drawer>
       <Box className={styles.main}>{children}</Box>
     </>
-  );
-}
-
-function buildNavList(router: Router, path: string) {
-  return (
-    <List className={styles.navList}>
-      {navItems.map((ni) => {
-        return (
-          <ListItem key={ni.id} disablePadding>
-            <ListItemButton onClick={() => router.push(ni.path)} selected={ni.path === path}>
-              <ListItemIcon>{ni.icon}</ListItemIcon>
-              <ListItemText>{ni.text}</ListItemText>
-            </ListItemButton>
-          </ListItem>
-        );
-      })}
-    </List>
   );
 }

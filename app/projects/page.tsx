@@ -6,7 +6,7 @@ import { projects } from "./projects";
 
 export default function ProjectsPage() {
   return (
-    <Stack className={styles.projectsStack}>
+    <Stack className={styles.projectsStack} spacing={2}>
       {projects.map((p) => (
         <Box className={styles.projectBox}>
           <ProjectCard key={p.id} project={p}></ProjectCard>
