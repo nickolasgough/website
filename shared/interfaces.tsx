@@ -31,3 +31,9 @@ export interface GitHubRepo {
   name: string;
   githubURL: string;
 }
+
+export interface LeetCodeJSON {
+  name: string;
+  url: string;
+  imageURL: string;
+}
