@@ -14,7 +14,7 @@ export interface ProjectCardInput {
 export default function ProjectCard({project}: ProjectCardInput) {
   let cardMedia = (<></>);
   if (project.imageURL) {
-    cardMedia = (<CardMedia component="img" height="200px" image={project.imageURL}></CardMedia>);
+    cardMedia = (<CardMedia component="img" width="100%" image={project.imageURL}></CardMedia>);
   }
   return (
     <Card className={styles.projectCard}>
@@ -37,7 +37,7 @@ function ProjectLinks({githubRepos}: ProjectLinksInput) {
     return (<></>);
   }
 
-  let links = (<Link href={githubRepos[0].githubURL}>GitHub link</Link>);
+  let links = (<Link href={githubRepos[0].githubURL} target="_blank">GitHub link</Link>);
   if (githubRepos.length > 1) {
     links = (
       <>

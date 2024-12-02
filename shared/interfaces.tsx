@@ -36,4 +36,6 @@ export interface LeetCodeJSON {
   name: string;
   url: string;
   imageURL: string;
+  solutionURL: string;
+  descriptionHTML: string;
 }
