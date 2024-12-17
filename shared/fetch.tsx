@@ -1,6 +1,6 @@
 export type RequestOpts = RequestInit & {
-  contentType: "json" | "text";
-}
+  contentType?: "json" | "text";
+};
 
 export default function fetchData<T>(url: string, options?: RequestOpts): Promise<T> {
   return fetch(url, options)

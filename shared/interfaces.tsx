@@ -1,5 +1,5 @@
 export interface Router {
-  push(path: string): void
+  push(path: string): void;
 }
 
 export interface Title {
@@ -30,6 +30,16 @@ export interface GitHubRepo {
   id: string;
   name: string;
   githubURL: string;
+}
+
+export type GitHubContentType = "file" | "dir";
+
+export interface GitHubContent {
+  name: string;
+  path: string;
+  url: string;
+  type: GitHubContentType;
+  content?: string;
 }
 
 export interface LeetCodeJSON {

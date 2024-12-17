@@ -22,12 +22,6 @@ export const metadata: Metadata = {
   description: "My personal website",
 };
 
-export const defaultBodyStyle = {
-  height: "100%",
-  width: "100%",
-  margin: 0,
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`} style={{height: "100vh", width: "100vw", margin: 0}}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`} style={{ height: "100vh", width: "100vw", margin: 0 }}>
         <AppNav children={children}></AppNav>
       </body>
     </html>
