@@ -39,8 +39,14 @@ export default function AppHome() {
               </Box>
             </Paper>
           </Grid>
-          <Grid className={styles.gridCol} size={{ md: 1, sm: 2 }}>
-            <Avatar className={styles.nickPhoto} alt="Nick's profile picture" src="/nick.png"></Avatar>
+          <Grid className={styles.gridCol} size={1}>
+            <Avatar alt="Nick's profile picture" src="/nick.png" sx={{
+              height: "auto",
+              maxHeight: "70vh",
+              width: "100%",
+              maxWidth: "80vw",
+              margin: "0 auto"
+            }}></Avatar>
           </Grid>
         </Grid>
       </Container>
