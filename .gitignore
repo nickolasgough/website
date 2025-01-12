@@ -4,3 +4,6 @@
 # Next
 .next
 .vercel
+
+# Sensitive
+.env

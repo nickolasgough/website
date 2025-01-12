@@ -42,10 +42,8 @@ export interface GitHubContent {
   content?: string;
 }
 
-export interface LeetCodeJSON {
-  name: string;
-  url: string;
-  imageURL: string;
-  solutionURL: string;
+export interface LeetCode {
+  path: string;
   descriptionHTML: string;
+  code: string;
 }
